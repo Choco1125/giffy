@@ -1,15 +1,17 @@
-import './App.css';
-import ListOfGifs from './components/ListOfGifs';
-import { Link, Route } from 'wouter';
+import './App.css'
+import { Link, Route } from 'wouter'
+import GiffyLogo from './assets/logo.png'
+import ListOfGifs from './components/ListOfGifs'
+import Home from './pages/Home'
 
 function App() {
   return (
     <div className="App">
-      <h1>App</h1>
-      <Link to="/gif/pandas">Gif de pandas</Link>
-      <Link to="/gif/colombia">Gif de Colombia</Link>
-      <Link to="/gif/programación">Gif de programación</Link>
-      <Route path='/gif/:keyword' component={ListOfGifs} />
+      <Link to='/'>
+        <img src={GiffyLogo} alt="Logo" className='app-logo' />
+      </Link>
+      <Route path='/' component={Home} />
+      <Route path='/search/:keyword' component={ListOfGifs} />
     </div>
   )
 }

@@ -4,4 +4,16 @@
   padding: 2rem;
   text-align: center;
 }
+.App{
+  display: flex;
+  flex-direction: column;
+}
 
+a{
+  color: #09f;
+  font-size: 32px;
+}
+
+i {
+  font-size: 80px;
+}

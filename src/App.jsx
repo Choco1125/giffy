@@ -1,8 +1,8 @@
 import './App.css'
 import { Link, Route } from 'wouter'
 import GiffyLogo from './assets/logo.png'
-import ListOfGifs from './components/ListOfGifs'
-import Home from './pages/Home'
+import Home from './pages/Home/index'
+import SearchResults from './pages/SearchResults'
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
         <img src={GiffyLogo} alt="Logo" className='app-logo' />
       </Link>
       <Route path='/' component={Home} />
-      <Route path='/search/:keyword' component={ListOfGifs} />
+      <Route path='/search/:keyword' component={SearchResults} />
     </div>
   )
 }

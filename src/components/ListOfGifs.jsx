@@ -2,23 +2,7 @@ import React, { useEffect, useState } from 'react'
 import getGifts from '../services/getGifts'
 import Gif from './gif'
 
-export default function ListOfGifs({ params }) {
-
-    const { keyword } = params;
-
-    const [gifs, setGifs] = useState([]);
-    const [loading, setLoading] = useState(false)
-
-    useEffect(() => {
-        setLoading(true);
-        getGifts({ keyword })
-            .then((gifs) => {
-                setGifs(gifs)
-                setLoading(false)
-            });
-    }, [keyword]);
-
-    if (loading) return <i>Cargando...🌀</i>
+export default function ListOfGifs({ gifs }) {
 
     return <div>
         {

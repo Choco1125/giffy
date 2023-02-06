@@ -3,6 +3,8 @@ import { Link, Route } from 'wouter'
 import GiffyLogo from './assets/logo.png'
 import Home from './pages/Home/index'
 import SearchResults from './pages/SearchResults'
+import Detail from './pages/Detail'
+import { GifContextProvider } from './context/GifContext'
 
 function App() {
   return (
@@ -10,8 +12,11 @@ function App() {
       <Link to='/'>
         <img src={GiffyLogo} alt="Logo" className='app-logo' />
       </Link>
-      <Route path='/' component={Home} />
-      <Route path='/search/:keyword' component={SearchResults} />
+      <GifContextProvider>
+        <Route path='/' component={Home} />
+        <Route path='/search/:keyword' component={SearchResults} />
+        <Route path='/gif/:id' component={Detail} />
+      </GifContextProvider>
     </div>
   )
 }

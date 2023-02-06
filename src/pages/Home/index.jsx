@@ -9,7 +9,7 @@ export default function Home() {
 
     const [keyword, setKeyword] = useState('')
     const [path, pushLocation] = useLocation()
-    const { loading, gifs } = useGif({ keyword: 'Pokemon' })
+    const { loading, gifs } = useGif()
 
     const handleSubmit = event => {
         event.preventDefault()

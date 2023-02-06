@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react'
-import getGifts from '../services/getGifts'
+import React from 'react'
 import Gif from './gif'
 
 export default function ListOfGifs({ gifs }) {
 
-    return <div>
+    return <div className='listGif'>
         {
             gifs.map(({ url, title, id }) =>
                 <Gif

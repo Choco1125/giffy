@@ -5,8 +5,13 @@ import Spinner from 'components/Spinner'
 
 export default function SearchResults({ params }) {
     const { keyword } = params;
-    const { loading, gifs } = useGif({ keyword })
+    const { loading, gifs, setPage } = useGif({ keyword })
 
-    return loading ? <Spinner /> : <ListOfGifs gifs={gifs} />
+    const handleNextPage = () => setPage(prevPage => prevPage + 1)
+
+    return <>
+        {loading ? <Spinner /> : <ListOfGifs gifs={gifs} />}
+        <button onClick={handleNextPage}>Get next page</button>
+    </>
 
 }

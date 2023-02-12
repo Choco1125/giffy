@@ -1,10 +1,8 @@
 import React, { useState } from 'react'
-import { Link, useLocation } from 'wouter'
-import ListOfGifs from '../../components/ListOfGifs'
-import TrendingSearches from '../../components/TrendingSearches'
-import useGif from '../../hooks/useGif'
-
-const POPULARES = ["Matrix", "Chile", "Colombia", "Ecuador"]
+import { useLocation } from 'wouter'
+import ListOfGifs from 'components/ListOfGifs'
+import TrendingSearches from 'components/TrendingSearches'
+import useGif from 'hooks/useGif'
 
 export default function Home() {
 

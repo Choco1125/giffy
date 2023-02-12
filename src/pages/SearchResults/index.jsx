@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import ListOfGifs from '../../components/ListOfGifs'
-import useGif from '../../hooks/useGif';
+import ListOfGifs from 'components/ListOfGifs'
+import useGif from 'hooks/useGif';
 
 export default function SearchResults({ params }) {
     const { keyword } = params;

@@ -16,14 +16,13 @@ export default function useGif({ keyword } = { keyword: null }) {
     useEffect(() => {
         setLoading(true);
 
-
         getGifts({ keyword: keywordToUse })
             .then((gifs) => {
                 setGifs(gifs)
                 setLoading(false)
                 localStorage.setItem('lastKeyword', keyword)
             });
-    }, [keyword, keywordToUse, setGifs]);
+    }, [keyword, setGifs]);
 
     useEffect(() => {
 
@@ -36,7 +35,7 @@ export default function useGif({ keyword } = { keyword: null }) {
                 setLoadingNextPage(false)
             })
 
-    }, [keywordToUse, page])
+    }, [page])
 
     return { loading, loadingNextPage, gifs, setPage }
 }

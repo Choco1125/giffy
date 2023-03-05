@@ -4,7 +4,6 @@ import useGif from 'hooks/useGif'
 import Spinner from 'components/Spinner'
 import useNearScreen from 'hooks/useNearScreen'
 import debounce from 'just-debounce-it'
-import useTitle from 'hooks/useSEO'
 import { Helmet } from 'react-helmet'
 
 export default function SearchResults({ params }) {
@@ -14,14 +13,12 @@ export default function SearchResults({ params }) {
     const { isNearScreen } = useNearScreen({ externalRef: loading ? null : externalRef, once: false })
 
     const title = gifs ? `${gifs.length} resultados de ${keyword}` : ''
-    // useTitle({ title })
 
     const debounceHandleNextPage = useCallback(debounce(
         () => setPage(prevPage => prevPage + 1), 200
     ), [setPage])
 
     useEffect(() => {
-        console.log(isNearScreen)
         if (isNearScreen) debounceHandleNextPage()
     }, [isNearScreen])
 

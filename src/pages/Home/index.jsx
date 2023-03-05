@@ -4,6 +4,7 @@ import TrendingSearches from 'components/TrendingSearches'
 import useGif from 'hooks/useGif'
 import SearchForm from 'components/SearchForm'
 import { useLocation } from 'wouter'
+import useTitle from 'hooks/useSEO'
 
 export default function Home() {
 

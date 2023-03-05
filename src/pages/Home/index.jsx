@@ -5,6 +5,7 @@ import useGif from 'hooks/useGif'
 import SearchForm from 'components/SearchForm'
 import { useLocation } from 'wouter'
 import useTitle from 'hooks/useSEO'
+import { Helmet } from 'react-helmet'
 
 export default function Home() {
 
@@ -17,6 +18,10 @@ export default function Home() {
 
     return (
         <>
+            <Helmet>
+                <title>Home | Giffy</title>
+                <meta name="description" content="Gif searcher" />
+            </Helmet>
             <SearchForm onSubmit={handleSubmit} />
             <h3>Última búsqueda</h3>
             <ListOfGifs gifs={gifs} />

@@ -19,7 +19,7 @@ export default function SearchResults({ params }) {
     useEffect(() => {
         console.log(isNearScreen)
         if (isNearScreen) debounceHandleNextPage()
-    }, [debounceHandleNextPage, isNearScreen])
+    }, [isNearScreen])
 
 
     return <>

@@ -32,7 +32,7 @@ export default function SearchResults({ params }) {
                     <title>{title}</title>
                     <meta name="description" content={title} />
                 </Helmet>
-                <SearchForm />
+                <SearchForm initialKeyword={keyword} initialRating={rating} />
                 <ListOfGifs gifs={gifs} />
                 <br />
                 <div id="visor" ref={externalRef}></div>

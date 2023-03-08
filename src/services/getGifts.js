@@ -1,6 +1,6 @@
 import { API_KEY, API_URL } from './settings'
 
-export default function getGifts({ keyword = 'morty', limit = 25, page = 0, rating } = {}) {
+export default function getGifts({ keyword = 'morty', limit = 25, page = 0, rating = 'g' } = {}) {
 
     const apiURL = `${API_URL}/gifs/search?api_key=${API_KEY}&q=${keyword}&limit=${limit}&offset=${page * limit}&rating=${rating}&lang=en`;
 

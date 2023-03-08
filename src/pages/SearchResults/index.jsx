@@ -5,6 +5,7 @@ import Spinner from 'components/Spinner'
 import useNearScreen from 'hooks/useNearScreen'
 import debounce from 'just-debounce-it'
 import { Helmet } from 'react-helmet'
+import SearchForm from 'components/SearchForm'
 
 export default function SearchResults({ params }) {
     const { keyword } = params;
@@ -31,6 +32,7 @@ export default function SearchResults({ params }) {
                     <title>{title}</title>
                     <meta name="description" content={title} />
                 </Helmet>
+                <SearchForm />
                 <ListOfGifs gifs={gifs} />
                 <br />
                 <div id="visor" ref={externalRef}></div>
